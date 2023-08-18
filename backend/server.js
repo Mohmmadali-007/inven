@@ -19,7 +19,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(
   cors({
-    origin: ["http://localhost:3000", "https://pinvent-app.vercel.app"],
+    origin: ["http://localhost:3000", "https://inven.vercel.app/"],
     credentials: true,
   })
 );
@@ -39,7 +39,7 @@ app.get("/", (req, res) => {
 // Error Middleware
 app.use(errorHandler);
 // Connect to DB and start server
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || 5000;
 mongoose
   .connect(process.env.MONGO_URI)
   .then(() => {
